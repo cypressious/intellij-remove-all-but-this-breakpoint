@@ -1,18 +1,16 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.cypressious.intellijremoveallbutthisbreakpoint</id>
-    <name>intellij-remove-all-but-this-breakpoint</name>
-    <vendor>cypressious</vendor>
+    <id>de.rakhman.removeallbutthisbreakpoint</id>
+    <name>Remove All But This Breakpoint</name>
+    <vendor>Kirill Rakhman</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
-
-    <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.cypressious.intellijremoveallbutthisbreakpoint.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-    </extensions>
-
-    <applicationListeners>
-        <listener class="com.github.cypressious.intellijremoveallbutthisbreakpoint.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
-    </applicationListeners>
+    <actions>
+        <action id="RemoveAllButThisBreakpoint"
+                class="com.github.cypressious.intellijremoveallbutthisbreakpoint.RemoveAllButThisBreakpointAction"
+                text="Remove All But This Breakpoint" description="Removes all breakpoints except on lines with carets">
+            <add-to-group group-id="EditorGutterPopupMenu" anchor="last"/>
+        </action>
+    </actions>
 </idea-plugin>
