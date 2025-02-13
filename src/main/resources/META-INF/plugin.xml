@@ -12,5 +12,10 @@
                 text="Remove All But This Breakpoint" description="Removes all breakpoints except on lines with carets">
             <add-to-group group-id="EditorGutterPopupMenu" anchor="last"/>
         </action>
+        <action id="DisableAllButThisBreakpoint"
+                class="com.github.cypressious.intellijremoveallbutthisbreakpoint.DisableAllButThisBreakpointAction"
+                text="Disable All But This Breakpoint" description="Disables all breakpoints except on lines with carets">
+            <add-to-group group-id="EditorGutterPopupMenu" anchor="last"/>
+        </action>
     </actions>
 </idea-plugin>
